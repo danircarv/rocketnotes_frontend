@@ -1,5 +1,6 @@
 import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
 import { Header } from "../../components/Header";
+import { ButtonText } from "../../components/ButtonText";
 
 export function Home() {
   return (
@@ -10,7 +11,17 @@ export function Home() {
 
       <Header></Header>
 
-      <Menu></Menu>
+      <Menu>
+        <li>
+          <ButtonText title="Todos" $isactive="true" />
+        </li>
+        <li>
+          <ButtonText title="React" />
+        </li>
+        <li>
+          <ButtonText title="NodeJs" />
+        </li>
+      </Menu>
 
       <Search></Search>
 
