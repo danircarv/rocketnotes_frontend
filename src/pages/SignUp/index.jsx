@@ -1,16 +1,20 @@
 import { useState } from "react";
-import { Background, Container, Form } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FiMail, FiLock, FiUser } from "react-icons/fi";
 
 import { api } from "../../services/api";
 import { Input } from "../../components/Input";
-import { FiMail, FiLock, FiUser } from "react-icons/fi";
 import { Button } from "../../components/Button";
+
+import { Background, Container, Form } from "./styles";
 
 export function SignUp() {
   const [name, setName] = useState(" ");
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
+  7;
+
+  const navigate = useNavigate();
 
   function handleSignUp() {
     if (!name || !email || !password) {
@@ -21,6 +25,7 @@ export function SignUp() {
       .post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado com sucesso!");
+        navigate("/");
       })
       .catch((error) => {
         if (error.response) {

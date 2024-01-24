@@ -18,7 +18,7 @@ export function SignIn() {
 
         <Input placeholder="Senha" type="password" icon={FiLock} />
 
-        <Button title="Cadastrar" />
+        <Button title="Entrar" />
 
         <Link to="/register">Criar conta</Link>
       </Form>
