@@ -11,8 +11,8 @@ function AuthProvider({ children }) {
       const response = await api.post("/sessions", { email, password });
       const { user, token } = response.data;
 
-      localStorage.setItem("@rocketnotes: user", JSON.stringify(user));
-      localStorage.setItem("@rocketnotes: token", token);
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+      localStorage.setItem("@rocketnotes:token", token);
 
       api.defaults.headers.authorization = `Bearer ${token}`;
       setData({ user, token });
@@ -27,10 +27,10 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     // const token = localStorage.getItem("@rocketnotes:token") || null;
-    const token = localStorage.getItem("@rocketnotes: token", token);
+    const token = localStorage.getItem("@rocketnotes:token");
 
     // const user = localStorage.getItem("@rocketnotes:user") || null;
-    const user = localStorage.getItem("@rocketnotes:user", user);
+    const user = localStorage.getItem("@rocketnotes:user");
 
     if (token && user) {
       api.defaults.headers.authorization = `Bearer ${token}`;
