@@ -41,6 +41,7 @@ export const Menu = styled.ul`
   text-align: center;
 
   > li {
+    margin-top: 24px;
     margin-bottom: 24px;
   }
 `;
