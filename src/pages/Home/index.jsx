@@ -33,6 +33,8 @@ export function Home() {
 
     fetchTags();
   }, []);
+  console.log(tagsSelected);
+  console.log(tagsSelected.length === 0);
 
   return (
     <Container>
@@ -46,7 +48,10 @@ export function Home() {
         <ButtonText
           title="Todos"
           onClick={() => handleTagSelected("all")}
-          $isactive={tagsSelected.length === 0}
+          $isactive={
+            tagsSelected.length === 0 ||
+            (tagsSelected.length === 1 && tagsSelected[0] === "all")
+          }
         />
 
         {tags &&
