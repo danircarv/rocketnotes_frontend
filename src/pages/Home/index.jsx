@@ -31,7 +31,6 @@ export function Home() {
     async function fetchTags() {
       const response = await api.get("/tags");
       setTags(response.data);
-      console.log(response.data);
     }
 
     fetchTags();
@@ -43,7 +42,6 @@ export function Home() {
         `/notes?title=${search}&tags=${tagsSelected}`
       );
       setNotes(response.data);
-      console.log(response.data);
     }
     fetchNotes();
   }, [tagsSelected, search]);
